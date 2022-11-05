@@ -152,3 +152,38 @@ body {
   text-transform: uppercase;
   color: var(--medium);
 }
+
+.addbook-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.input {
+  border: 1px solid var(--medium);
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.addbook-input-title {
+  flex: 2;
+}
+
+.category-selection {
+  flex: 0.7;
+  padding: 0.5rem;
+}
+
+.category-option {
+  padding: 0.5rem;
+}
+
+.addbook-btn {
+  flex: 0.7;
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+  color: var(--white);
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+}

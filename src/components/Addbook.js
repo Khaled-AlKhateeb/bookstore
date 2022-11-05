@@ -10,12 +10,13 @@ class Addbook extends React.Component {
     return (
       <div className="addbook-container">
         <h2 className="addbook-title">add new book</h2>
-        <form>
-          <input type="text" placeholder="Book title" />
-          <select type="text" placeholder="Category">
-            <option value="action">Action</option>
+        <form className="addbook-form">
+          <input className="addbook-input-title input" type="text" placeholder="Book title" />
+          <select className="category-selection input" type="text">
+            <option className="category-option" value="" disabled selected hidden>Category</option>
+            <option className="category-option" value="action">Action</option>
           </select>
-          <button type="submit" placeholder="Category">add book</button>
+          <button className="addbook-btn" type="submit" placeholder="Category">add book</button>
         </form>
       </div>
     );
