@@ -1,4 +1,4 @@
-# Math Magicians
+# Bookstore
 
 a React app Bookstore
 

@@ -188,3 +188,14 @@ body {
   text-transform: uppercase;
   border-radius: 0.5rem;
 }
+
+.checkstatus-btn {
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}

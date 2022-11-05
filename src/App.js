@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Book from './components/Book';
 import Addbook from './components/Addbook';
+import CheckStatus from './components/Checkstatus';
 
 class App extends React.Component {
   constructor(props) {
@@ -46,6 +47,7 @@ const Categories = () => (
         <Link className="link selected" to="/categories">CATEGORIES</Link>
       </nav>
     </div>
+    <CheckStatus />
   </div>
 );
 
