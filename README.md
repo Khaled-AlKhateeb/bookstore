@@ -1,3 +1,59 @@
+# Math Magicians
+
+a React app Bookstore
+
+## Built With
+
+- Major languages - React.
+- Frameworks - 
+- Technologies used - Visual Studio Code, Git and Github, Chrome (Browser and it's Dev Tools), Accessibility Tools (Wave Evaluation ool and Web Developer)
+- Testing: Linter.
+
+## Live Demo
+
+N/A
+
+### Prerequisites 
+  - Local Machine, Git, Text Editor (VS Code preferably)
+
+### Setup 
+  - Checkout the project repository here [Link](https://github.com/Khaled-AlKhateeb/bookstore.git)
+
+### Install 
+  - Use can use the repository HTTPS or SSH Urls to clone the project on your local machine or download the ZIP folder and extract its contents. 
+
+### Run tests 
+  - Use Chrome dev tools
+  - Ensure to checkout any linter errors
+
+
+## Authors
+
+👤 *Khaled AlKhateeb*
+
+- GitHub: [@Khaled-AlKhateeb](https://github.com/Khaled-AlKhateeb)
+- Twitter: [@](https://twitter.com/)
+- LinkedIn: [](https://linkedin.com/in/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to open a new issue in the repository. I will be grateful to have them.
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Thanks Microverse for the support and inspiration to do this.
+- Thanks [Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) and [TV Maze](https://www.tvmaze.com/api) for the API service
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
