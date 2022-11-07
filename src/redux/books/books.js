@@ -1,7 +1,7 @@
 const ADDBOOK = 'ADDBOOK';
 const REMOVEBOOK = 'REMOVEBOOK';
 
-export default booksReducer = (state = [], action) => {
+const booksReducer = (state = [], action) => {
   switch (action.type) {
     case ADDBOOK:
       return [
@@ -9,28 +9,27 @@ export default booksReducer = (state = [], action) => {
         {
           id: action.id,
           text: action.text,
-          completed: false
-        }
+          completed: false,
+        },
       ];
     case REMOVEBOOK:
-      return state.map(book => {
+      return state.map((book) => {
         if (book.id !== action.id) {
           return book;
         }
+        return state;
       });
     default:
       return state;
-  };
+  }
 };
 
-export const addBook = () => {
-  return {
-    type: ADDBOOK
-  }
-}
+const addBook = () => ({
+  type: ADDBOOK,
+});
 
-export const removeBook = () => {
-  return {
-    type: REMOVEBOOK
-  }
-}
+const removeBook = () => ({
+  type: REMOVEBOOK,
+});
+
+export { booksReducer, addBook, removeBook };
