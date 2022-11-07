@@ -5,7 +5,7 @@ a React app Bookstore
 ## Built With
 
 - Major languages - React.
-- Frameworks - 
+- Frameworks - Redux.
 - Technologies used - Visual Studio Code, Git and Github, Chrome (Browser and it's Dev Tools), Accessibility Tools (Wave Evaluation ool and Web Developer)
 - Testing: Linter.
 
