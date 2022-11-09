@@ -1,7 +1,8 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import Book from './components/Book';
+import { useSelector } from 'react-redux';
 import Addbook from './components/Addbook';
+import Book from './components/Book';
 import CheckStatus from './components/Checkstatus';
 
 class App extends React.Component {
@@ -22,21 +23,24 @@ class App extends React.Component {
   }
 }
 
-const Books = () => (
-  <div>
-    <div className="nav-container">
-      <h1 className="head-title">Bookstore CMS</h1>
-      <nav className="links-container">
-        <Link className="link selected" to="/">books</Link>
-        <Link className="link" to="/categories">categories</Link>
-      </nav>
+const Books = () => {
+  const book = useSelector((state) => state.book);
+  return (
+    <div>
+      <div className="nav-container">
+        <h1 className="head-title">Bookstore CMS</h1>
+        <nav className="links-container">
+          <Link className="link selected" to="/">books</Link>
+          <Link className="link" to="/categories">categories</Link>
+        </nav>
+      </div>
+      <div className="books-container">
+        <Book Book={book} />
+        <Addbook />
+      </div>
     </div>
-    <div className="books-container">
-      <Book />
-      <Addbook />
-    </div>
-  </div>
-);
+  );
+};
 
 const Categories = () => (
   <div>

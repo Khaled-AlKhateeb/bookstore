@@ -1,16 +1,27 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const ADDBOOK = 'ADDBOOK';
 const REMOVEBOOK = 'REMOVEBOOK';
 
-const booksReducer = (state = [], action) => {
+export default function booksReducer(state = [{
+  id: uuidv4(),
+  title: 'Warcraft',
+  author: 'Richard A. Kanaak',
+  category: 'Historical Fantasy',
+  completed: false,
+}], action) {
   switch (action.type) {
     case ADDBOOK:
       return [
         ...state,
         {
-          id: action.id,
-          text: action.text,
+          id: uuidv4(),
+          title: action.title,
+          author: action.author,
+          category: action.category,
           completed: false,
         },
+        console.log(action),
       ];
     case REMOVEBOOK:
       return state.map((book) => {
@@ -22,14 +33,12 @@ const booksReducer = (state = [], action) => {
     default:
       return state;
   }
-};
+}
 
-const addBook = () => ({
+export const addBook = () => ({
   type: ADDBOOK,
 });
 
-const removeBook = () => ({
+export const removeBook = () => ({
   type: REMOVEBOOK,
 });
-
-export { booksReducer, addBook, removeBook };

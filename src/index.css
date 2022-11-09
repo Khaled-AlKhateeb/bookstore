@@ -166,17 +166,17 @@ body {
   border-radius: 0.5rem;
 }
 
-.addbook-input-title {
+.addbook-input {
   flex: 2;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .category-selection {
   flex: 0.7;
   padding: 0.5rem;
-}
-
-.category-option {
-  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .addbook-btn {

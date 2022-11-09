@@ -1,7 +1,7 @@
 const COMPLETED = 'COMPLETED';
 const INPROGRESS = 'INPROGRESS';
 
-const categoryReducer = (state = [], action) => {
+export default function categoryReducer(state = [], action) {
   switch (action.type) {
     case COMPLETED:
       return 'UNDER CONSTRUCTION';
@@ -10,14 +10,12 @@ const categoryReducer = (state = [], action) => {
     default:
       return state;
   }
-};
+}
 
-const statusCompleted = () => ({
+export const statusCompleted = () => ({
   type: COMPLETED,
 });
 
-const statusInProgress = () => ({
+export const statusInProgress = () => ({
   type: INPROGRESS,
 });
-
-export { categoryReducer, statusCompleted, statusInProgress };
