@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Addbook from './components/Addbook';
+import AddBook from './components/AddBook';
 import Book from './components/Book';
 import CheckStatus from './components/Checkstatus';
 
@@ -36,7 +36,7 @@ const Books = () => {
       </div>
       <div className="books-container">
         <Book Book={book} />
-        <Addbook />
+        <AddBook />
       </div>
     </div>
   );
