@@ -1,30 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { ADDBOOK } from '../reducers/books/booksSlice';
 
 const Addbook = () => {
-  const book = useSelector((state) => state.book);
-  console.log(book);
+  const addBook = useSelector(ADDBOOK);
   const dispatch = useDispatch();
-  const newBook = {
-    id: null,
-    title: null,
-    author: null,
-    category: null,
-    completed: false,
-  };
-  const onChangeTitle = (e) => {
-    newBook.title = e.target.value;
-    return newBook;
-  };
-  const onChangeAuthor = (e) => {
-    newBook.author = e.target.value;
-    return newBook;
-  };
-  const onChangeCategory = (e) => {
-    newBook.category = e.target.value;
-    return newBook;
-  };
+  const [title, setTitle] = useState();
+  const [author, setAuthor] = useState();
+  const [category, setCategory] = useState();
   return (
     <div className="addbook-container">
       <h2 className="addbook-title">add new book</h2>
@@ -32,28 +15,27 @@ const Addbook = () => {
         className="addbook-form"
         onSubmit={(e) => {
           e.preventDefault();
-          dispatch(addBook());
         }}
       >
         <input
-          onChange={onChangeTitle}
           className="addbook-input input"
           type="text"
           placeholder="Book title"
+          onChange={(e) => setTitle(e.target.value)}
           required
         />
         <input
-          onChange={onChangeAuthor}
           className="addbook-input input"
           type="text"
           placeholder="Book Author"
+          onChange={(e) => setAuthor(e.target.value)}
           required
         />
         <select
-          onChange={onChangeCategory}
           className="category-selection input"
           type="text"
           defaultValue="empty"
+          onChange={(e) => setCategory(e.target.value)}
           required
         >
           <option className="category-option" value="empty" disabled hidden>Select Category</option>
@@ -78,6 +60,7 @@ const Addbook = () => {
           className="addbook-btn"
           type="submit"
           placeholder="Category"
+          onClick={() => dispatch(addBook())}
         >
           add book
         </button>
