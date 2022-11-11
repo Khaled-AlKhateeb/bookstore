@@ -1,18 +1,32 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import progress from '../../components/Assets/progress.png';
+import { bookRemove } from './booksSlice';
 
 const BooksList = () => {
-  const books = useSelector((state) => state.books);
+  const { books } = useSelector((state) => ({ ...state.books }));
+  const dispatch = useDispatch();
+  const onRemoveBookClicked = (id) => {
+    dispatch(bookRemove(id));
+  };
   const renderedBooks = books.map((book) => (
-    <div className="book-container" key={book.id}>
+    <div
+      className="book-container"
+      key={book.id}
+    >
       <div className="info-container">
         <h2 className="genre">{book.category}</h2>
         <h3 className="book-name">{book.title}</h3>
         <h3 className="author-name">{book.author}</h3>
         <div className="media-container">
           <button type="button" className="media-btns">Comments</button>
-          <button type="button" className="media-btns">Remove</button>
+          <button
+            type="button"
+            className="media-btns"
+            onClick={() => onRemoveBookClicked(book.id)}
+          >
+            Remove
+          </button>
           <button type="button" className="media-btns">Edit</button>
         </div>
       </div>
