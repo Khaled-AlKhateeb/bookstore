@@ -1,8 +1,12 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import {
+  Routes,
+  Route,
+  Link,
+} from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import AddBook from './components/AddBook';
-import Book from './components/Book';
+import { AddBookForm } from './reducers/books/AddBook';
+import BooksList from './reducers/books/Book';
 import CheckStatus from './components/Checkstatus';
 
 class App extends React.Component {
@@ -35,8 +39,8 @@ const Books = () => {
         </nav>
       </div>
       <div className="books-container">
-        <Book Book={book} />
-        <AddBook />
+        <BooksList Book={book} />
+        <AddBookForm />
       </div>
     </div>
   );

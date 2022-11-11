@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import progress from './Assets/progress.png';
+import progress from '../../components/Assets/progress.png';
 
 const BooksList = () => {
   const books = useSelector((state) => state.books);
