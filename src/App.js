@@ -46,17 +46,20 @@ const Books = () => {
   );
 };
 
-const Categories = () => (
-  <div>
-    <div className="nav-container">
-      <h1 className="head-title">Bookstore CMS</h1>
-      <nav className="links-container">
-        <Link className="link" to="/">BOOKS</Link>
-        <Link className="link selected" to="/categories">CATEGORIES</Link>
-      </nav>
+const Categories = () => {
+  const status = useSelector((state) => state.book);
+  return (
+    <div>
+      <div className="nav-container">
+        <h1 className="head-title">Bookstore CMS</h1>
+        <nav className="links-container">
+          <Link className="link" to="/">BOOKS</Link>
+          <Link className="link selected" to="/categories">CATEGORIES</Link>
+        </nav>
+      </div>
+      <CheckStatus Status={status} />
     </div>
-    <CheckStatus />
-  </div>
-);
+  );
+};
 
 export default App;

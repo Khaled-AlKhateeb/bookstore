@@ -29,9 +29,13 @@ const booksSlice = createSlice({
     bookRemove(state, action) {
       state.books = state.books.filter((book) => book.id !== action.payload);
     },
+    checkStatus() {
+      // eslint-disable-next-line
+      alert('Under construction');
+    },
   },
 });
 
-export const { bookAdded, bookRemove } = booksSlice.actions;
+export const { bookAdded, bookRemove, checkStatus } = booksSlice.actions;
 
 export default booksSlice.reducer;

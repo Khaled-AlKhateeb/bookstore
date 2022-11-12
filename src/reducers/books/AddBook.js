@@ -60,21 +60,21 @@ export const AddBookForm = () => {
           required
         >
           <option className="category-option" value="select" hidden>Select Category</option>
-          <option className="category-option" value="action">Action</option>
-          <option className="category-option" value="adventure">Adventure</option>
-          <option className="category-option" value="art">Art</option>
-          <option className="category-option" value="development">Development</option>
-          <option className="category-option" value="dystopian">Dystopian</option>
-          <option className="category-option" value="fantasy">Fantasy</option>
-          <option className="category-option" value="health">Health</option>
-          <option className="category-option" value="historical fiction">Historical Fiction</option>
-          <option className="category-option" value="history">History</option>
-          <option className="category-option" value="horror">Horror</option>
-          <option className="category-option" value="humor">Humor</option>
-          <option className="category-option" value="mystery">Mystery</option>
-          <option className="category-option" value="paranormal">Paranormal</option>
-          <option className="category-option" value="science fiction">Science Fiction</option>
-          <option className="category-option" value="thriller">Thriller</option>
+          <option className="category-option" value="Action">Action</option>
+          <option className="category-option" value="Adventure">Adventure</option>
+          <option className="category-option" value="Art">Art</option>
+          <option className="category-option" value="Development">Development</option>
+          <option className="category-option" value="Dystopian">Dystopian</option>
+          <option className="category-option" value="Fantasy">Fantasy</option>
+          <option className="category-option" value="Health">Health</option>
+          <option className="category-option" value="Historical fiction">Historical Fiction</option>
+          <option className="category-option" value="History">History</option>
+          <option className="category-option" value="Horror">Horror</option>
+          <option className="category-option" value="Humor">Humor</option>
+          <option className="category-option" value="Mystery">Mystery</option>
+          <option className="category-option" value="Paranormal">Paranormal</option>
+          <option className="category-option" value="Science fiction">Science Fiction</option>
+          <option className="category-option" value="Thriller">Thriller</option>
         </select>
         <button
           id="bookContent"
