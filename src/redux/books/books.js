@@ -1,3 +1,6 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
 const defaultState = [];
 
 // API data
@@ -31,9 +34,9 @@ export const removeBook = (id) => ({
 
 // Thunks
 
-export const fetchBooks = () => async (dispatch) => fetch(APIURLPATH)
-  .then((res) => res.json())
-  .then((data) => {
+const processBooks = (data, dispatch) => {
+  data.then((res) => res.json());
+  data.then((data) => {
     const dataArray = [];
     Object.values(data).forEach((value) => {
       dataArray.push(value[0]);
@@ -43,6 +46,15 @@ export const fetchBooks = () => async (dispatch) => fetch(APIURLPATH)
     });
     dispatch(fullfiled(dataArray));
   });
+};
+
+export const fetchBooks = createAsyncThunk(
+  FULLFILED,
+  async (dispatch) => {
+    const response = await axios.get(APIURLPATH);
+    processBooks(response.data, dispatch);
+  },
+);
 
 export const postBookItem = (obj) => async (dispatch) => {
   fetch(APIURLPATH, {
