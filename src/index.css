@@ -23,6 +23,10 @@ body {
   background-color: var(--light);
 }
 
+li {
+  list-style: none;
+}
+
 .nav-container {
   display: flex;
   padding: 0 2rem;
@@ -52,9 +56,14 @@ body {
   color: var(--dark);
 }
 
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .books-container {
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--medium);
   width: 85%;
   margin: auto;
 }
