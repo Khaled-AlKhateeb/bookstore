@@ -66,12 +66,20 @@ export const postBookItem = (obj) => async (dispatch) => {
   }).then(() => dispatch(addBook(obj)));
 };
 
-export const deleteBookItem = (id) => async (dispatch) => {
+const removeDeletedBooks = (id, dispatch) => {
   fetch(`${APIURLPATH}/${id}`, {
     method: 'DELETE',
     body: JSON.stringify(id),
   }).then(() => dispatch(removeBook(id)));
 };
+
+export const deleteBookItem = createAsyncThunk(
+  REMOVE_BOOK,
+  async (dispatch) => {
+    const response = await axios.get(APIURLPATH);
+    removeDeletedBooks(response.id, dispatch);
+  },
+);
 
 // Reducer
 

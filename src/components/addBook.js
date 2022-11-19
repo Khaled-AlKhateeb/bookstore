@@ -1,96 +1,83 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { postBookItem } from '../redux/books/books';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/bookReducer';
 
-const AddBook = () => {
+const Addbook = () => {
   const [titleValue, setTitleValue] = useState('');
-
   const [authorValue, setAuthorValue] = useState('');
-
   const [categoryValue, setCategoryValue] = useState('');
-
   const dispatch = useDispatch();
-
   const obj = {
     item_id: uuidv4(),
     title: titleValue,
     author: authorValue,
     category: categoryValue,
   };
-
   const titleInput = (e) => {
     setTitleValue(e.target.value);
   };
-
-  const categoryInput = (e) => {
-    setCategoryValue(e.target.value);
-  };
-
   const authorInput = (e) => {
     setAuthorValue(e.target.value);
   };
-
+  const categoryInput = (e) => {
+    setCategoryValue(e.target.value);
+  };
   const initialValue = () => {
-    if ((titleValue === '') || (categoryValue === '') || (authorValue === '')) {
-      // eslint-disable-next-line
+    if ((titleValue === '') || (authorValue === '') || (categoryValue === '')) {
       alert('All fields are required');
     } else {
-      dispatch(postBookItem(obj));
-      setTitleValue('');
-      setAuthorValue('');
-      setCategoryValue('');
+      dispatch(addBook(obj));
     }
   };
 
   return (
-    <section className="addbook-container">
-      <h1 className="addbook-title">Add a new book</h1>
-      <form action="" className="addbook-form">
+    <div className="addbook-container">
+      <h2 className="addbook-title">add new book</h2>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          e.target.reset();
+        }}
+        className="addbook-input-container"
+      >
         <input
           className="addbook-input input"
           type="text"
-          id="title"
-          name="title"
+          placeholder="Book title"
           onChange={titleInput}
-          value={titleValue}
-          placeholder="BookTitle"
           required
         />
         <input
           className="addbook-input input"
           type="text"
-          id="author"
-          name="author"
+          placeholder="Author name"
           onChange={authorInput}
-          value={authorValue}
-          placeholder="Author"
           required
         />
-        <input
-          className="category-selection input"
-          type="text"
-          id="author"
-          name="author"
+        <select
+          className="addbook-input"
+          name="category"
           onChange={categoryInput}
-          value={categoryValue}
-          placeholder="Genre"
           required
-        />
+        >
+          <option value="empty" hidden>Category</option>
+          <option value="Action">Action</option>
+          <option value="Horror">Horror</option>
+          <option value="Drama">Drama</option>
+          <option value="Historical Fiction">Historical Fiction</option>
+          <option value="Sience Fiction">Sience Fiction</option>
+        </select>
         <button
           className="addbook-btn"
-          onClick={() => {
-            initialValue();
-          }}
-          type="button"
-          name="add"
-          id="add"
+          type="submit"
+          onClick={() => { initialValue(); }}
         >
-          Add Book
+          add book
         </button>
       </form>
-    </section>
+    </div>
   );
 };
 
-export default AddBook;
+export default Addbook;

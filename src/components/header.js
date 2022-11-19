@@ -1,22 +1,14 @@
-/*eslint-disable*/
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
-  return (
-    <div>
-      <header className="nav-container">
-        <p className="head-title"><strong>Bookstore CMS</strong></p>
-        <nav className="links-container">
-          <Link className="link selected" to="/">BOOKS</Link>
-          <Link className="link" to="/categories">CATEGORIES</Link>
-        </nav>
-      </header>
-      <div className="books-container">
-        <Outlet />
-      </div>
+const Header = () => (
+  <div className="header-container">
+    <h1 className="header-title">Bookstore CMS</h1>
+    <div className="nav-container">
+      <Link className="nav-btn" to="/">books</Link>
+      <Link className="nav-btn" to="/categories">categories</Link>
     </div>
-  )
-};
+  </div>
+);
 
 export default Header;
