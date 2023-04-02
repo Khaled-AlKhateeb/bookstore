@@ -11,7 +11,7 @@ a React app Bookstore
 
 ## Live Demo
 
-N/A
+https://bookstore-iota-puce.vercel.app/
 
 ### Prerequisites 
   - Local Machine, Git, Text Editor (VS Code preferably)
@@ -29,11 +29,11 @@ N/A
 
 ## Authors
 
-👤 *Khaled AlKhateeb*
+👤 **Khaled Al-Khateeb**
 
 - GitHub: [@Khaled-AlKhateeb](https://github.com/Khaled-AlKhateeb)
-- Twitter: [@](https://twitter.com/)
-- LinkedIn: [](https://linkedin.com/in/)
+- Twitter: [@KhaledA93751489](https://twitter.com/KhaledA93751489)
+- LinkedIn: [khaled-al-khateeb](https://www.linkedin.com/in/khaled-al-khateeb-3a1013247/)
 
 ## 🤝 Contributing
 
@@ -48,11 +48,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Thanks Microverse for the support and inspiration to do this.
-- Thanks [Involvement API](https://www.notion.so/Involvement-API-869e60b5ad104603aa6db59e08150270) and [TV Maze](https://www.tvmaze.com/api) for the API service
-
-## 📝 License
-
-This project is [MIT](./LICENSE) licensed.
 
 # Getting Started with Create React App
 
